@@ -5,6 +5,8 @@ defmodule GuessWho.User do
     field :name, :string
     field :photo_url, :string
 
+    has_many :states, GuessWho.State
+
     timestamps()
   end
 

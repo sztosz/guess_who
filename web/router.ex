@@ -20,7 +20,9 @@ defmodule GuessWho.Router do
   end
 
   scope "/api", GuessWho do
-    resources "/users", UserController, except: [:new, :edit]
+    resources "/users", UserController, except: [:new, :edit] do
+      resources "/states", StateController, except: [:new, :edit]
+    end
   end
 
   # Other scopes may use custom stacks.
