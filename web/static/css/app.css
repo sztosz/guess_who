@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, system, sans-serif;
+}
+
+body {
+    background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png");
+    position: relative;
+    height: 100vh;
+}
+
+#content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1180px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+    color: #e3e3e3;
+    font-size: 30px;
+    text-align: center;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 24px;
+    color: #1fb57d;
+    font-weight: 300;
+    margin-bottom: 100px;
+}
+
+.button {
+    background: #1fb57d;
+    color: #fff;
+    font-size: 16px;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    width: 200px;
+    text-align: center;
+    border-radius: 2px;
+    display: block;
+    margin: 0 auto;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #01ab6b;
+}
