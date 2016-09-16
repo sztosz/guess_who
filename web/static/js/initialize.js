@@ -2,15 +2,15 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import tmp from './reducers';
+import rootReducers from './rootReducers';
 import App from './components/App';
 import thunk from 'redux-thunk';
 
-const store = createStore(tmp, applyMiddleware(thunk));
+const store = createStore(rootReducers, applyMiddleware(thunk));
 
 if (module.hot) {
-  module.hot.accept('./reducers', () => {
-    store.replaceReducer(require('./reducers').default);
+  module.hot.accept('./rootReducers', () => {
+    store.replaceReducer(require('./rootReducers').default);
   });
   module.hot.accept();
 
