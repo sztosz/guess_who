@@ -6,11 +6,12 @@ import axios from 'axios'
 import SingleUser from './SingleUser'
 
 const Users = ({ visibility, users }) => (
+  console.log(Object.keys(users).map(function (key) {return users[key]}).constructor),
   <div>
     <p className="user">Tu będą kafelki userów</p>
     {
-      users.map(user =>
-        <span>{user.id}</span>
+      Object.keys(users).map(function (key) {return users[key]}).map(user =>
+        <span>{user}</span>
       )
     }
   </div>

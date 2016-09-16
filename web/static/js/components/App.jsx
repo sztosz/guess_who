@@ -14,7 +14,8 @@ const App = ({ onClick, visibility, users }) => (
       <p className="tagline">Check how much do you know about your co-workers</p>
       <a className="button" onClick={onClick}>Play</a>
     </div>
-    <Users users={users} visibility={visibility} />
+    {/*<Users users={users} visibility={visibility} />*/}
+    <Users users={users} />
   </div>
   //   let content = null
   //   switch (this.props.visibility) {
@@ -56,7 +57,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onClick: () => {
-      dispatch(setVisibility('users'))
+      // dispatch(setVisibility('users'))
       dispatch(getUserRequest())
     }
   }

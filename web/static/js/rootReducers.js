@@ -6,6 +6,7 @@ const initialState = {
 }
 
 export const users = (state = initialState, action) => {
+  console.log(action)
   switch (action.type) {
     case 'GET_USERS_SUCCESS':
       return Object.assign({}, state, { users: action.payload.users }, { visibility: initialState.visibility })
@@ -14,16 +15,17 @@ export const users = (state = initialState, action) => {
   }
 }
 
-export const visibility = (state = initialState, action) => {
-  switch (action.type) {
-    case 'VISIBILITY':
-    	return Object.assign({}, state.visibility, action.visibility)
-    default:
-      return state.visibility
-  }
-}
+// export const visibility = (state = initialState, action) => {
+//   // console.log(action)
+//   switch (action.type) {
+//     case 'VISIBILITY':
+//     	return Object.assign({}, state.visibility, action.visibility)
+//     default:
+//       return state.visibility
+//   }
+// }
 
 export default combineReducers({
   users,
-  visibility
+  // visibility
 });

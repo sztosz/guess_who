@@ -7,10 +7,10 @@ export function setVisibility(visibility) {
   }
 }
 
-function getUsersSuccess(response) {
+function getUsersSuccess(data) {
   return {
     type: 'GET_USERS_SUCCESS',
-    payload: response.data
+    payload: data["data"]
   }
 }
 
@@ -25,9 +25,13 @@ export function getUserRequest() {
   return function(dispatch) {
     axios.get('http://localhost:4000/api/users')
       .then((response) => {
+        // console.log("RESPONSE")
+        // console.log(response.data)
         dispatch(getUsersSuccess(response.data))
       })
       .catch((err) => {
+        // console.log('ERROR')
+        // console.log(err)
         dispatch(getUsersError(err))
       })
   }
