@@ -19,6 +19,10 @@ defmodule GuessWho.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", GuessWho do
+    resources "/users", UserController, except: [:new, :edit]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", GuessWho do
   #   pipe_through :api
