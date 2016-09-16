@@ -16,8 +16,7 @@ defmodule GuessWho.State do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:questions, :answered, :points])
-    |> IO.inspect
-    |> validate_required([:questions, :answered, :points, :user_id])
+    |> validate_required([:questions, :answered, :points])
     |> assoc_constraint(:user)
   end
 end
