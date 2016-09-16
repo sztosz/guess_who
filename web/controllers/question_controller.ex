@@ -52,4 +52,12 @@ defmodule GuessWho.QuestionController do
 
     send_resp(conn, :no_content, "")
   end
+
+  def random(conn, %{"id" => id}) do
+    question =
+      id
+      |> Question.random
+      |> Repo.one
+    render(conn, "show.json", question: question)
+  end
 end

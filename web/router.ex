@@ -23,7 +23,9 @@ defmodule GuessWho.Router do
     resources "/users", UserController, except: [:new, :edit] do
       resources "/states", StateController, except: [:new, :edit]
     end
-    resources "/questions", QuestionController, except: [:new, :edit]
+    post "/questions/random", QuestionController, :random
+    resources "/questions", QuestionController, except: [:new, :edit] do
+    end
   end
 
   # Other scopes may use custom stacks.

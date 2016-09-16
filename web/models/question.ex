@@ -20,4 +20,11 @@ defmodule GuessWho.Question do
     |> validate_required([:question])
     |> assoc_constraint(:user)
   end
+
+  def random(id) do
+    __MODULE__
+    |> order_by(fragment("RANDOM()"))
+    |> where([q], q.user_id != ^id)
+    |> first
+  end
 end
