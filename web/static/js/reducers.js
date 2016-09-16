@@ -1,4 +1,4 @@
-export default (state = 0, action=[]) => {
+export default (state = {visibility: "welcome_page"}, action=[]) => {
   switch (action.type) {
     case 'VISIBILITY':
       return {

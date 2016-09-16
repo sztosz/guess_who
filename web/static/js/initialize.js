@@ -1,11 +1,12 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import tmp from './reducers';
 import App from './components/App';
+import thunk from 'redux-thunk';
 
-const store = createStore(tmp, {visibility: 'welcome_page'});
+const store = createStore(tmp, applyMiddleware(thunk));
 
 if (module.hot) {
   module.hot.accept('./reducers', () => {

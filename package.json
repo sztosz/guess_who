@@ -11,7 +11,8 @@
     "react": "~0.14.7",
     "react-dom": "~0.14.7",
     "react-redux": "~4.3.0",
-    "redux": "~3.2.1"
+    "redux": "~3.2.1",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-brunch": "~6.0.0",

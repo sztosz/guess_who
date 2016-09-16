@@ -3,6 +3,7 @@ import { setVisibility } from '../actions'
 import { connect } from 'react-redux'
 import Users from './Users'
 import Question from './Question'
+import Result from './Result'
 
 class App extends React.Component {
   handleClick(e) {
@@ -27,7 +28,7 @@ class App extends React.Component {
         content = <Question setVisibility={this.props.setVisibility}/>
         break
       case 'result':
-        content = <span>result</span>
+        content = <Result setVisibility={this.props.setVisibility}/>
         break
       default:
         content = null

@@ -33,6 +33,10 @@ h2 {
     margin-bottom: 100px;
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 .button {
     background: #1fb57d;
     color: #fff;
@@ -50,4 +54,6 @@ h2 {
 .button:hover {
     cursor: pointer;
     background: #01ab6b;
+    text-decoration: none;
+    color: #fff;
 }
