@@ -57,8 +57,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onClick: () => {
-      // dispatch(setVisibility('users'))
-      dispatch(getUserRequest())
+      return {
+        visibility: dispatch(setVisibility('users')),
+        users: dispatch(getUserRequest())
+      }
     }
   }
   // dispatch('VISIBILITY', { visibility: 'users' })
