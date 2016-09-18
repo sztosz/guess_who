@@ -1,15 +1,21 @@
 import React from 'react';
 import { setVisibility, getUserRequest } from '../actions'
 import { connect } from 'react-redux'
-import thunkMiddleware from 'redux-thunk'
-import axios from 'axios'
 
 class SingleUser extends React.Component {
 
+  handleOnClick(e){
+  	e.preventDefault()
+  }
+
   render() {
+  	let user = this.props.item.photo_url ? <img src={this.props.item.photo_url}/> : <div className="imagePlaceholder"><span>{this.props.item.name}</span></div>
+
     return (
       <div>
-        <p className="user">USER</p>
+      	<div className="singleImage" onClick={this.handleOnClick.bind(this)}>
+      		{user}
+      	</div>
       </div>
     );
   }

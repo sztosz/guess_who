@@ -16,6 +16,7 @@ body {
     transform: translate(-50%, -50%);
     width: 1180px;
     text-align: center;
+    margin: 0 auto;
 }
 
 h2 {
@@ -60,4 +61,49 @@ a:hover {
 
 .user {
     color: #fff;
+}
+
+.usersWrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin: 20px auto;
+    width: 1020px;
+}
+
+.singleImage {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 2px;
+    margin: 10px 10px 10px 10px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.singleImage:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.singleImage img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.imagePlaceholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 2px;
+    background: #fff;
+    opacity: 0.1;
+    border: 1px solid #000;
+}
+
+.imagePlaceholder span {
+    color: #000;
+    font-size: 16px;
+    text-align: center;
+    line-height: 150px;
 }

@@ -1,25 +1,21 @@
 import { combineReducers } from 'redux';
 
-const initialState = {
-	visibility: 'welcome_page',
-  users: []
-}
 
-export const users = (state = initialState, action) => {
+export const users = (state = [], action) => {
   switch (action.type) {
     case 'GET_USERS_SUCCESS':
-      return Object.assign({}, state, { users: action.payload.users }, { visibility: initialState.visibility })
+      return action.payload
     default:
-      return state.users
+      return state
   }
 }
 
-export const visibility = (state = initialState, action) => {
+export const visibility = (state = 'welcome', action) => {
   switch (action.type) {
     case 'VISIBILITY':
-    	return Object.assign({}, state.visibility, action.visibility)
+			return action.visibility
     default:
-      return state.visibility
+      return state
   }
 }
 
