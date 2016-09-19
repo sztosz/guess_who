@@ -2,6 +2,7 @@ defmodule GuessWho.QuestionController do
   use GuessWho.Web, :controller
 
   alias GuessWho.Question
+  alias GuessWho.User
 
   def index(conn, _params) do
     questions = Repo.all(Question)
@@ -58,6 +59,10 @@ defmodule GuessWho.QuestionController do
       id
       |> Question.random
       |> Repo.one
-    render(conn, "show.json", question: question)
+    wrong_users =
+      id
+      |> User.random
+      |> Repo.all
+    render(conn, "random.json", question: question, wrong_users: wrong_users)
   end
 end

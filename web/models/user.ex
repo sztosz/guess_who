@@ -19,4 +19,11 @@ defmodule GuessWho.User do
     |> cast(params, [:name, :photo_url])
     |> validate_required([:name, :photo_url])
   end
+
+  def random(id) do
+    __MODULE__
+    |> order_by(fragment("RANDOM()"))
+    |> where([q], q.id != ^id)
+    |> limit(3)
+  end
 end
